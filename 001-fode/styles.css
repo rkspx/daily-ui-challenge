@@ -1,0 +1,453 @@
+:root {
+    --main-black:  #191818;
+    --secondary-black: #0E0E0E;
+    --deep-black: #000000;
+    --main-white: #FFFFFF;
+    --accent: #facb52;
+    --accent-hover : #dfa921;
+    --profile-border: #eeeeee;
+    --inactive: #C4C4C4;
+    --inactive-hover: #6f6f6f;
+    --fire: #FB6E51;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin: 0;
+}
+
+.discount {
+    text-decoration: line-through;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h1.bold {
+    font-weight: 600;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background .black-box {
+    width: 100%;
+    height: 100%;
+    transform: translate(40%, 0) rotate(-45deg);
+    border-radius: 8rem;
+    background: var(--secondary-black);
+    overflow: hidden;
+}
+
+.background .img-shadow {
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 10rem 10rem, rgb(0 0 0 / 20%) 0px 0px 10rem 10rem;
+    z-index: -1;
+}
+
+.background .black-box svg {
+    fill: var(--main-black);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2rem 4rem;
+}
+
+header .search {
+    flex: 1;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+header nav .nav-item {
+    color: var(--inactive);
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    transition: color 200ms ease;
+}
+
+header nav .nav-item:hover {
+    color: var(--inactive-hover);
+}
+
+header nav .nav-item.active {
+    color: var(--main-black);
+}
+
+header nav .nav-item .active-mark {
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    transform: rotate(40deg);
+}
+
+header nav .nav-item.active .active-mark {
+    border-left-color: var(--main-black);
+}
+
+header nav .nav-item .underline {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.5rem;
+    height: .25rem;
+    background-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+header nav .nav-item:hover .underline {
+    background-color: var(--main-black);
+}
+
+header .buttons {
+    display: flex;
+    align-items: center;
+}
+
+header .buttons button {
+    padding: 1rem 3rem;
+    background-color: var(--main-black);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+    color: #fff;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+}
+
+header .buttons button:hover {
+    background-color: var(--secondary-black);
+}
+
+header .buttons button.accent {
+    background-color: var(--accent);
+    color: var(--secondary-black);
+}
+
+header .buttons button.accent:hover {
+    background-color: var(--accent-hover);
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+header .logo p.dot {
+    display: inline-block;
+    color: var(--accent);
+}
+
+main {
+    padding: 5rem 15rem;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+main .main-content {
+    flex: 1;
+}
+
+main img.product {
+    width: 50%;
+    height: auto;    
+}
+
+main .main-content h1 {
+    font-size: 4rem;
+    margin: 0;
+    line-height: 5rem;
+    font-weight: 300;
+}
+
+main .main-content h1.bold {
+    font-weight: 600;
+}
+
+main .main-content .subtitle {
+    max-width: 50%;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+main .main-content .price-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 60%;
+}
+
+main .main-content .price {
+    flex: 1;
+}
+
+main .main-content .price .actual {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 3rem;
+}
+
+main .main-content button.buy {
+    background-color: var(--main-black);
+    border: none;
+    border-radius: 4rem;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 1rem;
+    transition: background-color 200ms ease;
+}
+
+main .main-content button.buy {
+    display: flex;
+    align-items: center;
+}
+
+main .main-content button.buy i {
+    background-color: var(--accent);
+    border-radius: 4rem;
+    padding: 1rem;
+    line-height: 1rem;
+    color: var(--secondary-black);
+}
+
+main .main-content button.buy .text {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+main .main-content button.buy:hover {
+    background-color: var(--secondary-black);
+}
+
+footer {
+    display: flex;
+    padding: 0 4rem;
+    width: 100%;
+}
+
+footer .recommendation {
+    flex: 1;
+}
+
+footer .scroll-down-arrow {
+    width: 1rem;
+}
+
+footer .coupon {
+    flex: 1;
+}
+
+footer .recommendation {
+    display: flex;
+    align-items: center;
+}
+
+.recommendation .profile {
+    height: 10rem;
+    width: 10rem;
+    position: relative;
+    text-align: center;
+}
+
+.recommendation .profile .profile-bg {
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    background-color: var(--accent);
+    position: absolute;
+    bottom: 0;
+    z-index: -2;
+    border-radius: 50%;
+    border: 5px solid var(--profile-border);
+}
+
+.recommendation .profile .profile-bg-border {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--accent);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: -10%;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.recommendation .profile img {
+    width: auto;
+    height: 100%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.recommendation .text {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.recommendation .text:hover {
+    text-decoration: underline;
+}
+
+.recommendation .text p {
+    font-size: 1.2rem;
+}
+
+.recommendation .text p.bold {
+    font-weight: 600;
+}
+
+footer .coupon * {
+    color: #fff;
+}
+
+footer coupon {
+    width: 100%;
+}
+
+footer .coupon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+footer .coupon {
+    border: 2px dashed rgba(255, 255, 255, .25);
+    border-radius: 1rem;
+}
+
+footer .coupon .header {
+    display: flex;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+}
+
+footer .coupon .header p {
+    width: 80%;
+}
+
+footer .coupon .header .nav {
+    display: flex;
+}
+
+footer .coupon .body {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    border-top: 2px dashed rgba(255, 255, 255, .25);
+    padding: 1.5rem 2rem;
+}
+
+footer .coupon .body img {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+}
+
+footer .coupon .body .name {
+    flex: 1;
+}
+
+footer .coupon .body .name h3 {
+    font-size: 2.2rem;
+    font-weight: 300;
+}
+
+footer .coupon .body .name p {
+    font-size: 1rem;
+    font-weight: 200;
+    padding: .5rem 0;
+}
+
+footer .coupon .body .price {
+    width: 25%;
+    text-align: left;
+}
+
+footer .coupon .body .price p {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+footer .coupon .body .price p.discount {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+footer .coupon .body button {
+    background-color: var(--accent);
+    padding: .75rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+    display: flex;
+    align-items: center;
+}
+
+footer .coupon .body button i {
+    color: var(--main-black);
+    font-size: 1.2rem;
+}
+
+footer .coupon .body button .text {
+    padding: 0 1rem;
+    color: var(--main-black);
+    font-size: 1rem;
+}
+
+footer .coupon .body button:hover {
+    background-color: var(--accent-hover);
+}
+
+footer .coupon .body .name .calories {
+    display: flex;
+    align-items: center;
+}
+
+footer .coupon .body .name .calories i {
+    margin-right: 1rem;
+    color: var(--fire);
+}
